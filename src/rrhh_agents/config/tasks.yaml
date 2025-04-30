@@ -1,0 +1,33 @@
+analizar_cvs_task:
+  description: >
+    Recibirás un listado de candidatos extraído desde el siguiente Google Sheet: {sheet_url}.
+    Para cada candidato, deberás analizar la información de su currículum, extrayendo y estructurando:
+    - Principales habilidades técnicas.
+    - Experiencia laboral previa.
+    - Nivel educativo alcanzado.
+    - Certificaciones relevantes.
+    Tu análisis debe ser claro, conciso y organizado para facilitar posteriores evaluaciones.
+  expected_output: >
+    Un resumen estructurado para cada candidato en formato JSON, incluyendo los campos: "nombre", "habilidades", "experiencia", "educación", "certificaciones".
+  agent: analizador_cvs
+
+analizar_candidatos_task:
+ description: >
+    Tomá la oferta laboral que se ingresó a mano a continuación y analizá los candidatos disponibles para determinar cuál encaja mejor.
+
+    Oferta laboral:
+    {oferta_manual}
+
+    Compará habilidades técnicas, años de experiencia, tecnologías, y cualquier otro aspecto relevante.
+ expected_output: >
+    Una lista ordenada de candidatos con su nivel de afinidad a la oferta. Para cada uno, explicá brevemente por qué fue seleccionado o descartado.
+ agent: analizador_candidatos
+
+seleccionar_talentos_task:
+  description: >
+    A partir del listado de candidatos rankeados, deberás seleccionar los 5 mejores perfiles para el puesto ofrecido.
+    Además, deberás justificar brevemente por qué cada uno fue seleccionado, mencionando sus principales fortalezas y la razón de su buen encaje con el puesto.
+  expected_output: >
+    Un resumen con los 5 candidatos seleccionados en formato markdown, detallando nombre, puntaje (sobre una base de 100. Ejemplo: 95/100) y justificación de selección para cada uno y sus datos de contacto email y celular.
+    Todo el resultado debe estar en español.
+  agent: selector_talentos
