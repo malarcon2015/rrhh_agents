@@ -52,3 +52,13 @@ For support, questions, or feedback regarding the RrhhAgents Crew or crewAI.
 - [Chat with our docs](https://chatg.pt/DWjSBZn)
 
 Let's create wonders together with the power and simplicity of crewAI.
+
+---------------------------------------
+##Install packages:
+
+run "uv pip instal -e ."
+
+---------------------------------------
+##To use Googlesheets 
+
+Need create a credentials.json and use a any sheet to test (give "edit access" to user in credentials.json)
